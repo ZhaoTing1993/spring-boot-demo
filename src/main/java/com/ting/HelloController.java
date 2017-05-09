@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by Ting on 2017/5/9.
  */
-@RestController
+@RestController//Spring4后新加的注解,等于原来@ResponseBody配合@Controller使用的效果
 public class HelloController {
 
     @Value("${cupSize}")
