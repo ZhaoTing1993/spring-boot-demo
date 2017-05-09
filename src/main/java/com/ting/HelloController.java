@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * Hello
  * Created by Ting on 2017/5/9.
  */
 @RestController//Spring4后新加的注解,等于原来@ResponseBody配合@Controller使用的效果
