@@ -21,13 +21,14 @@ public class HelloController {
     private GirlProperties girlProperties;
 
     @RequestMapping("/hello")
-    public String say(){
+    public String say() {
 //        return "Hello Spring Boot!"+cupSize;
         return content;
     }
 
-    @RequestMapping("/hello2")
-    public String say2(){
-        return girlProperties.getAge()+":"+girlProperties.getCupSize();
+    //multi url mapping adapt
+    @RequestMapping(value = {"/hello2", "/hello3"})
+    public String say2() {
+        return girlProperties.getAge() + ":" + girlProperties.getCupSize();
     }
 }
