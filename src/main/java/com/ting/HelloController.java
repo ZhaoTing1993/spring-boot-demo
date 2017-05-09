@@ -2,6 +2,7 @@ package com.ting;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,13 @@ public class HelloController {
         return content;
     }
 
+    //@GetMapping = @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
+    public String get() {
+        //  return "Hello Spring Boot!"+cupSize;
+        return content;
+    }
+
     //    multi url mapping adapt
     @RequestMapping(value = {"/hello2", "/hello3"})
     public String multiSay() {
@@ -49,7 +57,7 @@ public class HelloController {
     // example: http://127.0.0.1:8080/spring-boot-demo/say?id=123
     // output: id:123
     @RequestMapping(value = {"/say"})
-    public String sayWithParam(@RequestParam("id") Integer id) {
+    public String sayWithParam(@RequestParam(value = "id",required = false, defaultValue = "0") Integer id) {
         return "id:" + id;
     }
 
